@@ -1,0 +1,154 @@
+:root{
+    --backgroundBlack: 	rgb(0,0,0);
+    --backgroundWhite: white;
+    --fontGold: gold;
+    --borderGrey: #70809023;
+    --fontBlack: 	#696969;
+
+}
+
+.upload input{
+    display: block;
+    outline: none;
+    height: 4rem;
+    width: 100%;
+    border: none;
+    border: .2px solid var(--borderGrey);
+    border-radius: 20px;
+    color: var(--fontBlack);
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    font-size: 1rem;
+    padding: 1rem 1rem 2px;
+    box-sizing: border-box;
+}
+
+.upload input:focus{
+    border-color: var(--fontGold);
+}
+
+.upload input:not(:placeholder-shown) + label{
+    color: var(--fontGold);
+    transform: scale(0.7) translateY(-1rem);
+}
+
+.upload input:focus + label{
+    color: var(--fontGold);
+    transform: scale(0.7) translateY(-1rem);
+}
+
+.upload label{
+    position: absolute;
+    font-size: 1.2rem;
+    top: .8rem;
+    left: 1rem;
+    color: var(--fontBlack);
+    transition: all .3s;
+    z-index: 1;
+}
+
+.upload .inputContainer{
+    position: relative;
+    width: 90%;
+    margin: 3px auto;
+}
+
+.upload .inputContainer span{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    color: var(--fontGold);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.upload .formControl button{
+    background-color: var(--backgroundWhite);
+    border: none;
+    outline: none;
+    color: var(--fontBlack);
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+.upload .formControl{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.upload .activeForm{
+    color: var(--fontGold) !important;
+}
+
+.upload h1{
+    color: var(--fontGold);
+    text-align: center;
+}
+
+.upload h1 span{
+    color: var(--fontBlack);
+}
+
+.upload .genreList{
+    color: var(--fontBlack);
+    font-size: 1.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: center;
+}
+
+.upload .genreItem{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.genreItem span{
+    cursor: pointer;
+    justify-self: left;
+}
+
+.genreItem span:hover{
+    color: var(--fontGold);
+}
+
+.upload .submitButton{
+    background-color: var(--backgroundWhite);
+    border: none;
+    outline: none;
+    color: var(--fontGold);
+    font-size: 1rem;
+}
+
+.upload .formFoot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload .apolloError{
+    color: var(--fontGold);
+    margin-left: 2rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.upload .successful{
+    color: var(--fontBlack);
+    text-align: center;
+}
+
+.upload .loading{
+    width: 2px;
+    height: 2px;
+    border-image: linear-gradient(var(--fontGold), var(--fontGold)) 30;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}

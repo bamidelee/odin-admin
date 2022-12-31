@@ -1,0 +1,53 @@
+:root{
+    --backgroundBlack: 	rgb(0,0,0);
+    --backgroundWhite: white;
+    --fontGold: gold;
+    --borderGrey: #70809023;
+    --fontBlack: 	#696969;
+
+}
+
+.header .eyeContainer{
+    height: 100%;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.header{
+    height: 3rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    margin: 1rem auto;
+}
+
+.header .eyeFrame{
+    height:60%;
+    width: 20px;
+    border: 2px solid var(--fontBlack);
+    border-radius: 20px;
+    transform:rotate(-5deg);
+}
+
+.header .eyeLid{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--fontBlack);
+}
+
+.header  h1{
+    color: var(--fontGold);
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.header h1 span{
+    color: var(--fontBlack);
+}

@@ -1,0 +1,157 @@
+:root{
+    --backgroundBlack: 	rgb(0,0,0);
+    --backgroundWhite: white;
+    --fontGold: gold;
+    --borderGrey: #70809023;
+    --fontBlack: 	#696969;
+
+}
+
+.signOn{
+    width: 80vmin;
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10vh;
+    border: .5px solid var(--fontGold);
+    border-radius: 20px;
+}
+
+.signOn input{
+    display: block;
+    outline: none;
+    height: 4rem;
+    width: 100%;
+    border: none;
+    border: .2px solid var(--borderGrey);
+    border-radius: 20px;
+    color: var(--fontBlack);
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    font-size: 1rem;
+    padding: 1rem 1rem 2px;
+    box-sizing: border-box;
+}
+
+.signOn input:focus{
+    border-color: var(--fontGold);
+}
+
+.signOn input:not(:placeholder-shown) + label{
+    color: var(--fontGold);
+    transform: scale(0.7) translateY(-1rem);
+}
+
+.signOn input:focus + label{
+    color: var(--fontGold);
+    transform: scale(0.7) translateY(-1rem);
+}
+.signOn h1 span{
+    color: var(--fontBlack);
+}
+.signOn h1{
+    color: var(--fontGold);
+    text-align: center;
+}
+
+.signOn .formControl button{
+    background-color: var(--backgroundWhite);
+    border: none;
+    outline: none;
+    color: var(--fontBlack);
+}
+
+.signOn .formControl{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.setSignin{
+    border-right: 1px solid var(--fontGold) !important;
+}
+
+.signOn label{
+    position: absolute;
+    font-size: 1.2rem;
+    top: .8rem;
+    left: 1rem;
+    color: var(--fontBlack);
+    transition: all .3s;
+    z-index: 1;
+}
+.signOn .inputContainer{
+    position: relative;
+    width: 90%;
+    margin: 3px auto;
+}
+
+.signOn .activeForm{
+    color: var(--fontGold) !important;
+}
+
+.signOn .errorMessage{
+    color: var(--fontGold);
+    margin-left: 2rem;
+}
+
+.signOn .submitButton{
+    color: var(--fontGold);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+.signOn .loading{
+    width: 2px;
+    height: 2px;
+    border-image: linear-gradient(var(--fontGold), var(--fontGold)) 30;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0) scale(1);
+    }
+
+    50%{
+        transform: rotate(90deg) scale(2);
+    }
+
+    75%{
+        transform: rotate(180deg) scale(3);
+    }
+
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.signOn .formFoot{
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    align-items: center;
+}
+
+.signOn .apolloError{
+    color: var(--fontGold);
+    margin-left: 2rem;
+}
+
+.signOn .forgot{
+    text-align: center;
+    color: var(--fontBlack);
+    margin: 4px;
+    cursor: pointer;
+}
