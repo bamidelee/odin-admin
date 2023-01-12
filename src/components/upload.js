@@ -76,11 +76,7 @@ export default function Upload () {
         }
     }, [createPostError, createMovieError, createMusicError, createSeriesError, createTableError, createFixtureError])
 
-    useEffect(() =>{
-        setTimeout(() => {
-            setUploadSuccessful(false)
-        }, 5000)
-    }, [uploadSuccessful])
+ 
     return(
         <div className="upload">
               <div className='formControl'>
@@ -151,14 +147,15 @@ export default function Upload () {
                                     handleSubmit()
                                 }}>
                                       {(formToSow === 'post' || formToSow === 'music' || formToSow === 'movie' || formToSow === 'series') && <div className="inputContainer">
-                                           <input
+                                           <textArea
                                                 type="text"
                                                 name="description"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 value={values.description}
                                                 placeholder=' '
-                                            />
+                                            >
+                                                </textArea>
                                                <label htmlFor="description">Description</label>
                                        </div>}
 

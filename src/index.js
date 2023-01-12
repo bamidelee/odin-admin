@@ -5,7 +5,7 @@ import App from './App';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://odin-backend.vercel.app/',
 });
 
 const authLink = setContext((_, { headers }) => {
