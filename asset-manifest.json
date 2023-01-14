@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/odin-admin/static/css/main.a30ee49c.css",
-    "main.js": "/odin-admin/static/js/main.b4ac23ed.js",
+    "main.css": "/odin-admin/static/css/main.0a618684.css",
+    "main.js": "/odin-admin/static/js/main.7016a9e5.js",
     "index.html": "/odin-admin/index.html",
-    "main.a30ee49c.css.map": "/odin-admin/static/css/main.a30ee49c.css.map",
-    "main.b4ac23ed.js.map": "/odin-admin/static/js/main.b4ac23ed.js.map"
+    "main.0a618684.css.map": "/odin-admin/static/css/main.0a618684.css.map",
+    "main.7016a9e5.js.map": "/odin-admin/static/js/main.7016a9e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.a30ee49c.css",
-    "static/js/main.b4ac23ed.js"
+    "static/css/main.0a618684.css",
+    "static/js/main.7016a9e5.js"
   ]
 }
