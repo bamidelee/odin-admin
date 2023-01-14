@@ -38,6 +38,39 @@
     transform: scale(0.7) translateY(-1rem);
 }
 
+.upload textarea{
+    display: block;
+    outline: none;
+    height: 15rem;
+    width: 100%;
+    border: none;
+    border: .2px solid var(--borderGrey);
+    border-radius: 20px;
+    color: var(--fontBlack);
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    font-size: 1rem;
+    padding: 1rem 1rem 2px;
+    box-sizing: border-box;
+}
+
+.upload textarea:focus{
+    border-color: var(--fontGold);
+}
+
+.upload textarea:not(:placeholder-shown) + label{
+    color: var(--fontGold);
+    transform: scale(0.7) translateY(-1rem);
+}
+
+.upload textarea:focus + label{
+    color: var(--fontGold);
+    transform: scale(0.7) translateY(-1rem);
+}
+
+
+
 .upload label{
     position: absolute;
     font-size: 1.2rem;

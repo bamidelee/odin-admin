@@ -151,14 +151,14 @@ export default function Upload () {
                                     handleSubmit()
                                 }}>
                                       {(formToSow === 'post' || formToSow === 'music' || formToSow === 'movie' || formToSow === 'series') && <div className="inputContainer">
-                                           <input
-                                                type="text"
+                                           <textarea
                                                 name="description"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 value={values.description}
                                                 placeholder=' '
-                                            />
+                                            >
+                                            </textarea>
                                                <label htmlFor="description">Description</label>
                                        </div>}
 
