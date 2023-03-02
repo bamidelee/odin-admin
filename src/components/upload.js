@@ -28,11 +28,11 @@ export default function Upload () {
         }
 
         if(formToSow === 'movie'){
-            createMovie({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: stars, releaseDate: values.releaseDate, source: values.source, genre: genres, country: values.country, director: values.director }})
+            createMovie({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: stars, releaseDate: values.releaseDate, source: values.source, genre: genres, country: values.country, director: values.director, trailer: values.trailer }})
         }
 
         if(formToSow === 'series'){
-            createSeries({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: stars, releaseDate: values.releaseDate, source: values.source, season: values.season, episode: values.episode, episodeTitle: values.episodeTitle, genre: genres, country: values.country, director: values.director }})
+            createSeries({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: stars, releaseDate: values.releaseDate, source: values.source, season: values.season, episode: values.episode, episodeTitle: values.episodeTitle, genre: genres, country: values.country, director: values.director, trailer: values.trailer }})
         }
 
         if(formToSow === 'table'){
@@ -76,11 +76,6 @@ export default function Upload () {
         }
     }, [createPostError, createMovieError, createMusicError, createSeriesError, createTableError, createFixtureError])
 
-    useEffect(() =>{
-        setTimeout(() => {
-            setUploadSuccessful(false)
-        }, 5000)
-    }, [uploadSuccessful])
     return(
         <div className="upload">
               <div className='formControl'>
@@ -111,7 +106,7 @@ export default function Upload () {
             </div>
             <div className="apolloError">{apolloError}</div>
             <Formik
-                initialValues={{description: '', title: '', primaryMedia: '', secondaryMedia:'', secondaryMediaType: '', genre: '', releaseDate: '', source: '', country: '', director:'', season: '', episode: '', episodeTitle:'',stars: '', label: '', releaseDate:'', language:'', album: '', trackNumber: '', table:'', league:'', sport:''}}
+                initialValues={{description: '', title: '', primaryMedia: '', secondaryMedia:'', secondaryMediaType: '', genre: '', releaseDate: '', source: '', country: '', director:'', season: '', episode: '', episodeTitle:'',stars: '', label: '', releaseDate:'', language:'', album: '', trackNumber: '', table:'', league:'', sport:'', trailer: ''}}
                 validate = {values => {
                     const errors = {};
                     if(!values.description){
@@ -437,6 +432,19 @@ export default function Upload () {
                                             />
                                             <label htmlFor="sport">Sport</label>
                                         </div>}
+
+                                        {(formToSow === 'movie' || formToSow === 'seres') &&  <div className="inputContainer">
+                                            <input
+                                                type="text"
+                                                name="trailer"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.trailer}
+                                                placeholder=' '
+                                            />
+                                            <label htmlFor="trailer">Trailer</label>
+                                        </div>}
+
 
                                     <div className="formFoot">
                                         <button className="submitButton" type="submit">

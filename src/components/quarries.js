@@ -774,16 +774,16 @@ export const CREATE_MUSIC = gql`
 `
 
 export const CREATE_MOVIE=gql`
-    mutation createMovie($description: String!, $title: String!, $primaryMedia: String!, $secondaryMedia: String!, $language: String!, $stars: [String!], $releaseDate: Date!, $genre: [String!], $source: String, $country: String!, $director: String){
-        createMovie(description: $description, title: $title, primaryMedia: $primaryMedia, secondaryMedia: $secondaryMedia,language: $language, stars: $stars, releaseDate: $releaseDate, genre: $genre, source: $source, country: $country, director: $director){
+    mutation createMovie($description: String!, $title: String!, $primaryMedia: String!, $secondaryMedia: String!, $language: String!, $stars: [String!], $releaseDate: Date!, $genre: [String!], $source: String, $country: String!, $director: String, $trailer: String){
+        createMovie(description: $description, title: $title, primaryMedia: $primaryMedia, secondaryMedia: $secondaryMedia,language: $language, stars: $stars, releaseDate: $releaseDate, genre: $genre, source: $source, country: $country, director: $director, trailer: $trailer){
             title
         }
     }
 `
 
 export const CREATE_SERIES = gql`
-    mutation createSeries($description: String!, $title: String!, $primaryMedia: String!, $secondaryMedia: String!, $language: String!, $stars: [String!], $releaseDate: Date!, $genre: [String!], $source: String, $season: String!, $episode: String!, $episodeTitle: String!, $country: String!, $director: String){
-        createSeries(description: $description, title: $title, primaryMedia: $primaryMedia, secondaryMedia: $secondaryMedia,language: $language, stars: $stars, releaseDate: $releaseDate, genre: $genre, source: $source, season: $season, episode: $episode, episodeTitle: $episodeTitle country: $country, director: $director){
+    mutation createSeries($description: String!, $title: String!, $primaryMedia: String!, $secondaryMedia: String!, $language: String!, $stars: [String!], $releaseDate: Date!, $genre: [String!], $source: String, $season: String!, $episode: String!, $episodeTitle: String!, $country: String!, $director: String, $trailer: String){
+        createSeries(description: $description, title: $title, primaryMedia: $primaryMedia, secondaryMedia: $secondaryMedia,language: $language, stars: $stars, releaseDate: $releaseDate, genre: $genre, source: $source, season: $season, episode: $episode, episodeTitle: $episodeTitle country: $country, director: $director, trailer: $trailer){
             title
         }
     }
