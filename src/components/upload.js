@@ -20,19 +20,19 @@ export default function Upload () {
 
         setApolloError('')
         if(formToSow === 'post'){
-            createPost({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, secondaryMediaType: values.secondaryMediaType, genre: genres }})
+            createPost({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, secondaryMediaType: values.secondaryMediaType, genre: values.genre.split(',') }})
         }
         
         if(formToSow === 'music'){
-            createMusic({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia,  genre: genres, star: stars, label: values.label, album: values.album, trackNumber: values.trackNumber}})
+            createMusic({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia,  genre: values.genre.split(','), star: values.stars.split(','), label: values.label, album: values.album, trackNumber: values.trackNumber}})
         }
 
         if(formToSow === 'movie'){
-            createMovie({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: stars, releaseDate: values.releaseDate, source: values.source, genre: genres, country: values.country, director: values.director, trailer: values.trailer }})
+            createMovie({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars:  values.stars.split(','), releaseDate: values.releaseDate, source: values.source, genre: values.genre.split(','), country: values.country, director: values.director, trailer: values.trailer }})
         }
 
         if(formToSow === 'series'){
-            createSeries({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: stars, releaseDate: values.releaseDate, source: values.source, season: values.season, episode: values.episode, episodeTitle: values.episodeTitle, genre: genres, country: values.country, director: values.director, trailer: values.trailer }})
+            createSeries({variables:{description:values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: values.stars.split(','), releaseDate: values.releaseDate, source: values.source, season: values.season, episode: values.episode, episodeTitle: values.episodeTitle, genre: values.genre.split(','), country: values.country, director: values.director, trailer: values.trailer }})
         }
 
         if(formToSow === 'table'){
@@ -215,12 +215,7 @@ export default function Upload () {
                                                 placeholder=' '
                                             />
                                                 <label htmlFor="genre">Genre</label>
-                                                <span className="material-symbols-outlined" onClick={() =>{
-                                                    setGenres([...genres, values.genre])
-                                                    values.genre = ''
-                                                }}>
-                                                    add
-                                                </span>
+                                               
                                     </div>}
 
                                        { genres.length >= 1 && <div className="genreList">
@@ -329,12 +324,7 @@ export default function Upload () {
                                                 placeholder=' '
                                             />
                                                <label htmlFor="stars">Stars</label>
-                                               <span className="material-symbols-outlined" onClick={() =>{
-                                                    setStars([...stars, values.stars])
-                                                    values.stars = ''
-                                                }}>
-                                                    add
-                                                </span>
+                                              
                                         </div>}
 
                                         { stars.length >= 1 && <div className="genreList">
