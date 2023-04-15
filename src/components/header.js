@@ -1,15 +1,15 @@
 import '../styles/header.css'
 import { useEffect, useState } from 'react'
 
-export default function Header ({mouseX}) {
+export default function Header({ mouseX }) {
     const [mousePos, setMousePos] = useState('')
-    const eyeStyle ={
+    const eyeStyle = {
         transform: `translate(${mousePos * 0.01}px, 1rem)`
     }
-    useEffect(() =>{
-       setMousePos(mouseX)
+    useEffect(() => {
+        setMousePos(mouseX)
     }, [mouseX])
-    return(
+    return (
         <div className="header">
             <div className='eyeContainer'>
                 <div className="eyeFrame">
@@ -20,7 +20,7 @@ export default function Header ({mouseX}) {
                 </div>
             </div>
             <h1>
-            <span>NAIJA</span>ODIN
+                <span>NAIJA</span>ODIN
             </h1>
         </div>
     )

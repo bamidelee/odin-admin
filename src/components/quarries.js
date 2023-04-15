@@ -1,4 +1,4 @@
-import {gql} from '@apollo/client'
+import { gql } from '@apollo/client'
 
 export const FIND_USER = gql`
    query findUserByUsername($username: String){
@@ -24,7 +24,7 @@ export const CURRENT_USER = gql`
     }
 `
 
-export const SEARCH_DASHPOST =gql`
+export const SEARCH_DASHPOST = gql`
     query searchDashPostByTitle($title: String){
         searchDashpost(title: $title){
             text
@@ -725,7 +725,7 @@ export const TRENDING = gql`
     }
 `
 
-export const  RESET_PASSWORD = gql`
+export const RESET_PASSWORD = gql`
     mutation resetPasswordByEmail($email: String!){
         resetPassword(email: $email){
             username
@@ -733,7 +733,7 @@ export const  RESET_PASSWORD = gql`
     }
 `
 
-export const PASSWORD_CHANGE =gql`
+export const PASSWORD_CHANGE = gql`
     mutation chnagePasswordOnEmail($password: String, $resetToken: String){
         passwordChange(passwod: $password, resetToken: $ resetToken){
             value
@@ -741,7 +741,7 @@ export const PASSWORD_CHANGE =gql`
     }
 `
 
-export const SIGNUP =gql`
+export const SIGNUP = gql`
     mutation signUpByEmail($name: String!, $email: String!, $username: String!, $password: String!){
         signUp(name: $name, email: $email, username: $username, password: $password){
            value
@@ -749,7 +749,7 @@ export const SIGNUP =gql`
     }
 `
 
-export const SIGNIN =gql`
+export const SIGNIN = gql`
     mutation signInByUsername($username: String!, $password: String!){
         signIn( username: $username, password: $password){
            value
@@ -757,7 +757,7 @@ export const SIGNIN =gql`
     }
 `
 
-export const CREATE_POST =gql`
+export const CREATE_POST = gql`
     mutation createNewPost($description: String!, $title: String!, $primaryMedia: String!, $secondaryMedia: String, $secondaryMediaType: String, $genre: [String!]){
         createPost(description: $description, title: $title, primaryMedia: $primaryMedia, secondaryMedia: $secondaryMedia, secondaryMediaType: $secondaryMediaType, genre: $genre){
             title
@@ -773,7 +773,7 @@ export const CREATE_MUSIC = gql`
     }
 `
 
-export const CREATE_MOVIE=gql`
+export const CREATE_MOVIE = gql`
     mutation createMovie($description: String!, $title: String!, $primaryMedia: String!, $secondaryMedia: String!, $language: String!, $stars: [String!], $releaseDate: Date!, $genre: [String!], $source: String, $country: String!, $director: String, $trailer: String){
         createMovie(description: $description, title: $title, primaryMedia: $primaryMedia, secondaryMedia: $secondaryMedia,language: $language, stars: $stars, releaseDate: $releaseDate, genre: $genre, source: $source, country: $country, director: $director, trailer: $trailer){
             title
