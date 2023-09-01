@@ -28,11 +28,11 @@ export default function Upload() {
         }
 
         if (formToSow === 'movie') {
-            createMovie({ variables: { description: values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: values.stars.split(','), releaseDate: values.releaseDate, source: values.source, genre: values.genre.split(','), country: values.country, director: values.director, trailer: values.trailer } })
+            createMovie({ variables: { description: values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: values.stars.split(','), releaseDate: values.releaseDate, source: values.source, genre: values.genre.split(','), country: values.country, director: values.director, trailer: values.trailer, request: values.request } })
         }
 
         if (formToSow === 'series') {
-            createSeries({ variables: { description: values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: values.stars.split(','), releaseDate: values.releaseDate, source: values.source, season: values.season, episode: values.episode, episodeTitle: values.episodeTitle, genre: values.genre.split(','), country: values.country, director: values.director, trailer: values.trailer } })
+            createSeries({ variables: { description: values.description, title: values.title, primaryMedia: values.primaryMedia, secondaryMedia: values.secondaryMedia, language: values.language, stars: values.stars.split(','), releaseDate: values.releaseDate, source: values.source, season: values.season, episode: values.episode, episodeTitle: values.episodeTitle, genre: values.genre.split(','), country: values.country, director: values.director, trailer: values.trailer, request: values.request } })
         }
 
         if (formToSow === 'table') {
@@ -111,7 +111,7 @@ export default function Upload() {
             </div>
             <div className="apolloError">{apolloError}</div>
             <Formik
-                initialValues={{ description: '', title: '', primaryMedia: '', secondaryMedia: '', secondaryMediaType: '', genre: '', releaseDate: '', source: '', country: '', director: '', season: '', episode: '', episodeTitle: '', stars: '', label: '', releaseDate: '', language: '', album: '', trackNumber: '', table: '', league: '', sport: '', trailer: '' }}
+                initialValues={{ description: '', title: '', primaryMedia: '', secondaryMedia: '', secondaryMediaType: '', genre: '', releaseDate: '', source: '', country: '', director: '', season: '', episode: '', episodeTitle: '', stars: '', label: '', language: '', album: '', trackNumber: '', table: '', league: '', sport: '', trailer: '', request: '' }}
                 validate={values => {
                     const errors = {};
                     if (!values.description) {
@@ -438,6 +438,18 @@ export default function Upload() {
                                 placeholder=' '
                             />
                             <label htmlFor="trailer">Trailer</label>
+                        </div>}
+
+                        {(formToSow === 'movie' || formToSow === 'series') && <div className="inputContainer">
+                            <input
+                                type="text"
+                                name="request"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.request}
+                                placeholder=' '
+                            />
+                            <label htmlFor="request">Request</label>
                         </div>}
 
 
